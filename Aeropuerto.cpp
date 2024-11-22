@@ -96,9 +96,132 @@ public:
 
 };
 
+class Avion2{
+private: 
+    string nombreVuelo;
+    vector <Boleto> listaBoletos;
+    int capacidadMaxima;
+public: 
+    Avion2(){
+        nombreVuelo = "Vuelo sin nombrar";
+        capacidadMaxima = 0;
+    }
+    Avion2(string nombreVuelo, int capacidad){
+        this -> nombreVuelo = nombreVuelo;
+        this -> capacidadMaxima = capacidad;
+    }
 
-int main(){
+    void setNombreVuelo(string nombre){
+        this -> nombreVuelo = nombre;
+    }
+    void setCapacidadMaxima (int capacidad){
+        this -> capacidadMaxima = capacidad;
+    }
+
+    string getNombreVuelo(){
+        return nombreVuelo;
+    }
+    int getCapacidadMaxima(){
+        return capacidadMaxima;
+    }
+
+    void comprarBoleto (){
+        if (listaBoletos.size() < capacidadMaxima){
+            string nombrePasajero;
+            cout << "Ingrese el nombre del pasajero: ";
+            cin.ignore();
+            getline(cin, nombrePasajero);
+
+            int numeroAsiento = listaBoletos.size() + 1;
+            Boleto nuevoBoleto(nombrePasajero, numeroAsiento);
+            listaBoletos.push_back(nuevoBoleto);
+            cout << "Boleto comprado con exito para "<< nombrePasajero<< "en el asiento "<< numeroAsiento << endl;
+        } else {
+            cout << "Lo sentimosm, el vuelo esta lleno. No hay mas asientos";
+        }
+
+    }
+
+    void mostrarBoleto(){
+        if (listaBoletos.empty()) {
+            cout << "No se han vendido voleto para el avion";
+        } else {
+            cout << "\nBoletos para "<< nombreVuelo << endl;
+            for (const auto& boleto : listaBoletos) {
+                boleto.mostrarBoleto();
+            }
+        }
+    }
+
+};
+
+class Avion3{
+private: 
+    string nombreVuelo;
+    vector <Boleto> listaBoletos;
+    int capacidadMaxima;
+public: 
+    Avion3(){
+        nombreVuelo = "Vuelo sin nombrar";
+        capacidadMaxima = 0;
+    }
+    Avion3(string nombreVuelo, int capacidad){
+        this -> nombreVuelo = nombreVuelo;
+        this -> capacidadMaxima = capacidad;
+    }
+
+    void setNombreVuelo(string nombre){
+        this -> nombreVuelo = nombre;
+    }
+    void setCapacidadMaxima (int capacidad){
+        this -> capacidadMaxima = capacidad;
+    }
+
+    string getNombreVuelo(){
+        return nombreVuelo;
+    }
+    int getCapacidadMaxima(){
+        return capacidadMaxima;
+    }
+
+    void comprarBoleto (){
+        if (listaBoletos.size() < capacidadMaxima){
+            string nombrePasajero;
+            cout << "Ingrese el nombre del pasajero: ";
+            cin.ignore();
+            getline(cin, nombrePasajero);
+
+            int numeroAsiento = listaBoletos.size() + 1;
+            Boleto nuevoBoleto(nombrePasajero, numeroAsiento);
+            listaBoletos.push_back(nuevoBoleto);
+            cout << "Boleto comprado con exito para "<< nombrePasajero<< "en el asiento "<< numeroAsiento << endl;
+        } else {
+            cout << "Lo sentimosm, el vuelo esta lleno. No hay mas asientos";
+        }
+
+    }
+
+    void mostrarBoleto(){
+        if (listaBoletos.empty()) {
+            cout << "No se han vendido voleto para el avion";
+        } else {
+            cout << "\nBoletos para "<< nombreVuelo << endl;
+            for (const auto& boleto : listaBoletos) {
+                boleto.mostrarBoleto();
+            }
+        }
+    }
+
+};
+
+
+
+int temporal(){
+
     Avion1 vuelo ("Vuelo a Argentina", 20);
+    Avion1 vuelo ("Vuelo a Colombia", 20);
+    Avion3 vuelo ("Vuelo a Peru", 20);
+
     int opcion;
 
     do {
@@ -122,4 +245,8 @@ int main(){
     } while (opcion != 0);
 
     return 0;
+}
+
+int main(){
+    
 }
