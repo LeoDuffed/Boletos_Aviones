@@ -27,6 +27,7 @@ public:
     string getNombrePasajero() const{
         return nombrePasajero;
     }
+
     int getNumeroAsiento() const{
         return numeroAsiento;
     }
@@ -72,7 +73,6 @@ public:
             cout << "Ingrese el nombre del pasajero: ";
             cin.ignore();
             getline(cin, nombrePasajero);
-
             int numeroAsiento = listaBoletos.size() + 1;
             Boleto nuevoBoleto(nombrePasajero, numeroAsiento);
             listaBoletos.push_back(nuevoBoleto);
@@ -83,9 +83,9 @@ public:
 
     }
 
-    void mostrarBoleto(){
+    void mostrarBoleto() const{
         if (listaBoletos.empty()) {
-            cout << "No se han vendido voleto para el avion";
+            cout << "\nNo se han vendido voleto para el avion\n";
         } else {
             cout << "\nBoletos para "<< nombreVuelo << endl;
             for (const auto& boleto : listaBoletos) {
@@ -134,7 +134,7 @@ int main(){
             if (opcioBoleto == 1){
                 vuelo2.comprarBoleto();
             } else if (opcioBoleto == 2) {
-                vuelo2.comprarBoleto();
+                vuelo2.mostrarBoleto();
             } else if (opcioBoleto == 0) {
                 cout << "\nSaliendo del menu del vuelo de Colombia.\n";
             } else {
