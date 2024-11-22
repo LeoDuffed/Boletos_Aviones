@@ -128,7 +128,7 @@ int main(){
         } else if (opcionesAcciones == 2){
             int opcioBoleto;
             cout << "\n1 = Comprar boleto\n2 = Mostrar boleto\n0 = Salir";
-            cout << "\n Ingrese se eleccion: ";
+            cout << "\nIngrese se eleccion: ";
             cin >> opcioBoleto;
 
             if (opcioBoleto == 1){
@@ -143,7 +143,7 @@ int main(){
         } else if (opcionesAcciones == 3){
             int opcioBoleto;
             cout << "\n1 = Comprar boleto\n2 = Mostrar boleto\n0 = Salir";
-            cout << "\n Ingrese se eleccion: ";
+            cout << "\nIngrese se eleccion: ";
             cin >> opcioBoleto;
 
             if (opcioBoleto == 1){
@@ -159,7 +159,7 @@ int main(){
         } else if (opcionesAcciones == 4) {
             int opcioBoleto;
             cout << "\n1 = Comprar boleto\n2 = Mostrar boleto\n0 = Salir";
-            cout << "\n Ingrese se eleccion: ";
+            cout << "\nIngrese se eleccion: ";
             cin >> opcioBoleto;
 
             if (opcioBoleto == 1) {
@@ -175,7 +175,7 @@ int main(){
         } else if (opcionesAcciones == 5) {
             int opcioBoleto;
             cout << "\n1 = Comprar boleto\n2 = Mostrar boleto\n0 = Salir";
-            cout << "\n Ingrese se eleccion: ";
+            cout << "\nIngrese se eleccion: ";
             cin >> opcioBoleto;
 
             if (opcioBoleto == 1) {
