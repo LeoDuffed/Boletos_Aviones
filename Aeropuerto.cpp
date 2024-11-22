@@ -137,7 +137,7 @@ public:
             listaBoletos.push_back(nuevoBoleto);
             cout << "Boleto comprado con exito para "<< nombrePasajero<< "en el asiento "<< numeroAsiento << endl;
         } else {
-            cout << "Lo sentimosm, el vuelo esta lleno. No hay mas asientos";
+            cout << "\nLo sentimosm, el vuelo esta lleno. No hay mas asientos";
         }
 
     }
@@ -214,39 +214,74 @@ public:
 
 };
 
+int main(){
+    int opcionesAciones;
+    do{
+        cout << "\n1 = Vuelo a Argentina.\n2 = Vuelo a Colombia.\n 3 = Vuelo Peru\n0 = Salir";
+        cout << "\nIngrese eleccion: ";
+        cin >> opcionesAciones;
 
-
-int temporal(){
-
-    Avion1 vuelo ("Vuelo a Argentina", 20);
-    Avion1 vuelo ("Vuelo a Colombia", 20);
-    Avion3 vuelo ("Vuelo a Peru", 20);
-
-    int opcion;
-
-    do {
-        cout << "\n1 = Comprar voleto.\n2 = Mostrar voleto\n0 = Salir";
-        cout << "Ingresar seleccion: ";
-        cin >> opcion;
-
-        switch (opcion){
-            case 1: 
-            vuelo.comprarBoleto();
-            break;
-            case 2:
-            vuelo.mostrarBoleto();
-            break;
-            case 0:
-            cout << "\n Saliendo del programa...";
-            break;
-            default:
-            cout << "Opcion no valida";
+        if (opcionesAciones == 1){
+            Avion1 vuelo1("Vuelo a Argentina", 20);
+            int opcionBoleto;
+            cout << "\n1 = Comprar boleto\n2 = Mostrar boleto\n0 = Salir";
+            cout << "Ingrese su eleccion: ";
+            cin >> opcionBoleto;
+            switch (opcionBoleto){
+                case 1: 
+                vuelo1.comprarBoleto();
+                break;
+                case 2: 
+                vuelo1.mostrarBoleto();
+                break;
+                case 0:
+                cout << "\nSaliendo\n";
+                break;
+                default:
+                cout << "Opcion invalida";
+            }           
+        } else if (opcionesAciones == 2){
+            Avion2 vuelo2 ("Vuelo a Colombia", 20);
+            int opcionBoleto;
+            cout << "\n1 = Comprar boleto\n2 = Mostrar boleto\n0 = Salir";
+            cout << "Ingrese su eleccion: ";
+            cin >> opcionBoleto;
+            switch (opcionBoleto){
+                case 1: 
+                vuelo2.comprarBoleto();
+                break;
+                case 2: 
+                vuelo2.mostrarBoleto();
+                break;
+                case 0: 
+                cout << "\nSaliendo\n";
+                break;
+                default: 
+                cout << "\nOpcion invalida\n";
+            }
+        } else if (opcionesAciones == 3){
+            Avion3 vuelo3 ("Vuelo a Peru", 20);
+            int opcionBoleto;
+            cout << "\n1 = Comprar boleto\n2 = Mostrar boleto\n0 = Salir";
+            cout << "Ingrese su seleccion: ";
+            cin >> opcionBoleto;
+            switch (opcionBoleto){
+                case 1: 
+                vuelo3.comprarBoleto();
+                break;
+                case 2: 
+                vuelo3.mostrarBoleto();
+                break;
+                case 0: 
+                cout << "\nSaliendo\n";
+                break;
+                default: 
+                cout << "\nOpcion invalida\n";
+            }
+        } else {
+            cout << "\nOpcion invalida\n";
         }
-    } while (opcion != 0);
+    } while (opcionesAciones >= 0 && opcionesAciones <= 3);
 
     return 0;
-}
-
-int main(){
-    
 }
