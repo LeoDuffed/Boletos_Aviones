@@ -106,7 +106,7 @@ public:
 
 // Main, desde esta funcion llamo a todas las clases y sus diferentes funciones. 
 int main(){
-    // Defino todos los aviones que hay, a donde van y cuantos pasajero tienen.
+    // Defino todos los aviones que hay, a donde van y cuantos pasajeros tienen.
     Avion vuelo1 ("Vuelo a Argentina", 20);
     Avion vuelo2 ("Vuelo a Colombia", 20);
     Avion vuelo3 ("Vuelo a Peru",  20);
