@@ -3,11 +3,14 @@
 #include <string> 
 using namespace std;
 
+// Clase hecha para asignar el nombre del pasajero y su asiento. 
+// Se imprime el boleto.
 class Boleto{
 private: 
     string nombrePasajero;
     int numeroAsiento;
 public: 
+    // Constructores de la clase Boleto
     Boleto(){
         nombrePasajero = "Sin Asignar";
         numeroAsiento = 0;
@@ -17,6 +20,7 @@ public:
         this -> numeroAsiento = numeroAsiento;
     }
 
+    // Setters y getters de la clase Boleto
     void setNombrePasajero(string nombre){
         this -> nombrePasajero = nombre;
     }
@@ -38,12 +42,14 @@ public:
     }
 };
 
+// 
 class Avion{
 private: 
     string nombreVuelo;
     vector <Boleto> listaBoletos;
     int capacidadMaxima;
 public: 
+    // Constructores
     Avion(){
         nombreVuelo = "Vuelo sin nombrar";
         capacidadMaxima = 0;
@@ -53,6 +59,7 @@ public:
         this -> capacidadMaxima = capacidad;
     }
 
+    // Setters y getters
     void setNombreVuelo(string nombre){
         this -> nombreVuelo = nombre;
     }
@@ -67,6 +74,7 @@ public:
         return capacidadMaxima;
     }
 
+    // Funcion hecha para que el usario pueda comprar el boleto. 
     void comprarBoleto (){
         if (listaBoletos.size() < capacidadMaxima){
             string nombrePasajero;
@@ -82,7 +90,7 @@ public:
         }
 
     }
-
+    // Funcion hecha para mostrar los boletos vendidos. 
     void mostrarBoleto() const{
         if (listaBoletos.empty()) {
             cout << "\nNo se han vendido voleto para el avion\n";
@@ -96,13 +104,16 @@ public:
 
 };
 
+// Main, desde esta funcion llamo a todas las clases y sus diferentes funciones. 
 int main(){
+    // Defino todos los aviones que hay, a donde van y cuantos pasajero tienen.
     Avion vuelo1 ("Vuelo a Argentina", 20);
     Avion vuelo2 ("Vuelo a Colombia", 20);
     Avion vuelo3 ("Vuelo a Peru",  20);
     Avion vuelo4 ("Vuelo a Venezuela", 20);
     Avion vuelo5 ("Vuelo a Brazil", 20);
 
+    // Interaccion del usario con el programa. 
     int opcionesAcciones;
     do{
         cout << "\n1 = Vuelo a Argentina\n2 = Vuelo a Colombia\n3 = Vuelo a Peru\n4 = Venezuela\n5 = Brazil\n0 = Salir\n";
